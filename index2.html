@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualisations</title>
+    <script src="javascripts/raphael-2.2.8/raphael.js"></script>
+    <script>
+window.onload = function () {
+
+    var p = Raphael("paper") ;
+    p.rect(0,0,400,400) ;
+    p.path("M  100 200 200 200  300 200").animate({path: "M 100, 200 , 200 ,350 ,300 ,200 "},8000,"elastic") ;
+
+
+     p.setStart();
+     p.circle(50, 50 ,20).attr({fill: "45-#000-#f00"});
+
+     p.text(50,50,"button").attr({fill: "white"});
+
+     var btn = p.setFinish();
+
+     btn.animate({transform: "r360"}, 1000);
+
+    var letters = p.print(100, 80, "HTML5ROCKS",p.getFont("Vegur"), 40);
+    letters[4].attr({fill:"orange"});
+    for (var i = 5; i < letters.length; i++) {
+        letters[i].attr({fill: "#3D5C9D", "stroke-width": "2", stroke: "#3D5C9D"});
+    }
+
+
+};
+
+    </script>
+    <style>
+        #paper{
+          width:  400px;
+            height: 400px;
+            margin :auto 0;
+
+
+        }
+
+
+
+    </style>
+
+
+</head>
+<body>
+
+<div id ="paper">
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
