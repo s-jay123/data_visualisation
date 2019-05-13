@@ -4,24 +4,33 @@ window.onload = function () {
     paper.rect(0, 0, 1000, 1000);
 
     let result = {
-
+        x:20,
+        y:160,
         fieldValue: null,
         rangeA : null,
          rangeB : null ,
 
-        animation() {
+        animation( ) {
 
-            this.rangeA = paper.rect(20, 160, this.fieldValue * 5, 200)
+            this.rangeA = paper.rect(this.x , this.y, this.fieldValue * 5, 200)
 
-                .attr({"fill": "yellow"}).animate({"transform": "..r-90, 200,200"}, 5000, "elastic") ;
+                .attr({"fill": "yellow"}).animate({"transform": "..r-90, 200,200"}, 5000, "elastic");
 
-
-            // setTimeout(this.rangeA.hide(), 5000);
+            
 
         }
 
+
+
     }
 
+
+    // function clicked() {
+    //     document.getElementById('btn').value = "";
+    //
+    //
+    //
+    // }
 
     let inputField = document.getElementById('data');
     inputField.addEventListener('input', function myFunction() {
@@ -33,6 +42,9 @@ window.onload = function () {
         if (result.fieldValue) {
 
             result.animation();
+
+
+
         }
 
 
